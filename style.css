@@ -1,0 +1,37 @@
+body
+{
+    margin:  0
+    padding: 0
+    font-family: sans-serif;
+}
+.container
+{
+    position: relative;
+    width: 1300px;
+    height: 800px;
+    margin: 240px auto;
+    background-image: url(files/america.png);
+}
+.container .box
+{
+    position: relative;
+    left: var(--x-cord);
+    top: var(--y-cord);
+    width: 16px;
+    height: 16px;
+    background: #FF0000;
+}
+.container .box .icon
+{
+    font-size: 0px;
+}
+.container .box:hover .icon
+{
+    position: relative;
+    font-size: 12px;
+    left: -40px;
+    top: -40px;
+    width: 96px;
+    height: 96px;
+    background: #00AAFF;
+}
