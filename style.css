@@ -17,10 +17,10 @@ body
     position: absolute;
     left: var(--x-cord);
     top: var(--y-cord);
-    width: 11px;
-    height: 16px;
+    width: 16.5px;
+    height: 24px;
     background-image: url(files/mappin.png);
-    background-size: 11px 16px;
+    background-size: 16.5px 24px;
 }
 .container .pin .content
 {
