@@ -14,7 +14,7 @@ body
 }
 .container .box
 {
-    position: relative;
+    position: absolute;
     left: var(--x-cord);
     top: var(--y-cord);
     width: 16px;
@@ -24,6 +24,9 @@ body
 .container .box .icon
 {
     font-size: 0px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
 }
 .container .box:hover .icon
 {
