@@ -28,7 +28,7 @@ body
 .container .box:hover .icon
 {
     position: relative;
-    font-size: 12px;
+    font-size: 15px;
     left: -40px;
     top: -40px;
     width: 96px;
