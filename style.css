@@ -12,23 +12,24 @@ body
     margin: 240px auto;
     background-image: url(files/america.png);
 }
-.container .box
+.container .pin
 {
     position: absolute;
     left: var(--x-cord);
     top: var(--y-cord);
-    width: 16px;
+    width: 11px;
     height: 16px;
-    background: #FF0000;
+    background-image: url(files/mappin.png);
+    background-size: 11px 16px;
 }
-.container .box .icon
+.container .pin .content
 {
     font-size: 0px;
     position: absolute;
     left: 0px;
     top: 0px;
 }
-.container .box:hover .icon
+.container .pin:hover .content
 {
     position: relative;
     font-size: 15px;
