@@ -10,6 +10,7 @@ body
     left: auto;
     width: 1333px;
     height: 610px;
+    margin: auto;
     background-image: url(files/america.png);
     background-size: 1333px 610px;
 }
