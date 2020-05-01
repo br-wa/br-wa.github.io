@@ -20,6 +20,8 @@ body
     top: var(--y-cord);
     width: 16.5px;
     height: 24px;
+    background: url(files/mappin.png);
+    background-size: 16.5px 24px;
 }
 .container .pin .content
 {
@@ -28,23 +30,12 @@ body
     top: 0px;
     width: 16.5px;
     height: 24px;
-    background: url(files/mappin.png);
-    background-size: 16.50px 24px;
-}
-.container .pin:hover
-{
-}
-.container .pin:hover .content
-{
-    position: relative;
-    left: 0px;
-    top: 0px;
     background: var(--custpin);
     background-size: 16.5px 24px;
     transition: all 1.5s linear;
     z-index: 5;
 }
-.container .pin:hover .content:hover
+.container .pin .content:hover
 {
     left: -74.255px;
     top: -216px;
