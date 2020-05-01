@@ -7,7 +7,6 @@ body
 .container
 {
     position: relative;
-    left: auto;
     width: 1333px;
     height: 610px;
     margin: auto;
@@ -21,23 +20,28 @@ body
     top: var(--y-cord);
     width: 16.5px;
     height: 24px;
-    background-image: url(files/mappin.png);
+    background: url(files/mappin.png);
     background-size: 16.5px 24px;
 }
 .container .pin .content
 {
-    font-size: 0px;
-    position: absolute;
+    position: relative;
     left: 0px;
     top: 0px;
+    width: 16.5px;
+    height: 24px;
+    background: var(--custpin);
+    background-size: 16.5px 24px;
+    transition: all .6s linear;
+    z-index: 5;
 }
-.container .pin:hover .content
+.container .pin .content:hover
 {
-    position: relative;
-    font-size: 15px;
-    left: -70px;
-    top: -70px;
-    width: 156px;
-    height: 156px;
-    background: #00AAFF;
+    left: -74.255px;
+    top: -216px;
+    width: 165px;
+    height: 240px;
+
+    background: var(--custpin);
+    background-size: 165px 240px;
 }
