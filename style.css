@@ -22,21 +22,18 @@ body
     height: 24px;
     background-image: url(files/mappin.png);
     background-size: 16.5px 24px;
+    transition: width 2s, height 2s, left: 2s, right: 2s, background-size: 2s;
 }
-.container .pin .content
-{
+.container .pin .content {
     font-size: 0px;
-    position: absolute;
-    left: 0px;
-    top: 0px;
 }
-.container .pin:hover .content
+.container .pin:hover
 {
     position: relative;
-    font-size: 15px;
-    left: -70px;
-    top: -70px;
-    width: 156px;
-    height: 156px;
-    background: #00AAFF;
+    left: -46.75px;
+    top: -136px;
+    width: 110px;
+    height: 160px;
+    background: url(files/mappin.png);
+    background-size: 110px 160px;
 }
