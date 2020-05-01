@@ -20,24 +20,31 @@ body
     top: var(--y-cord);
     width: 16.5px;
     height: 24px;
-    background-image: url(files/mappin.png);
-    background-size: 16.5px 24px;
-    transition: all 2s linear;
 }
 .container .pin .content
 {
-    font-size: 0px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    width: 16.5px;
+    height: 24px;
+    background: url(files/mappin.png);
+    background-size: 16.50px 24px;
 }
 .container .pin:hover
 {
-    left: calc(var(--x-cord)-46.75px);
-    top: calc(var(--y-cord)-136px);
-    width: 110px;
-    height: 160px;
-    background: url(files/mappin.png);
-    background-size: 110px 160px;
 }
 .container .pin:hover .content
 {
-    font-size: 15px;
+    background: var(--custpin);
+    background-size: 16.5px 24px;
+    transition: all 2s linear;
+    z-index: 5;
+}
+.container .pin:hover .content:hover
+{
+    width: 110px;
+    height: 160px;
+    background: var(--custpin);
+    background-size: 110px 160px;
 }
