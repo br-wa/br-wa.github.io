@@ -32,7 +32,7 @@ body
     height: 24px;
     background: var(--custpin);
     background-size: 16.5px 24px;
-    transition: all 1.5s linear;
+    transition: all .6s linear;
     z-index: 5;
 }
 .container .pin .content:hover
