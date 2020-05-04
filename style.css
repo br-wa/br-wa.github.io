@@ -32,9 +32,9 @@ body
     height: 32px;
     background: var(--logpin);
     background-size: 22px 32px;
-    transition: all .6s linear;
     z-index: 4;
     opacity: 1;
+    transition: all .6s linear, opacity .2s;
 }
 .container .pin:hover .overhead
 {
@@ -55,9 +55,9 @@ body
     height: 32px;
     background: var(--custpin);
     background-size: 22px 32px;
-    transition: all .6s linear;
     opacity: 0;
     z-index: 5;
+    transition: all .6s linear, opacity .2s;
 }
 .container .pin:hover .content
 {
