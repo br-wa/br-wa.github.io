@@ -45,18 +45,19 @@ body
     background: var(--logpin);
     background-size: 165px 240px;
     opacity: 0;
+    z-index: 1999;
 }
 .container .pin .content
 {
     position: relative;
     left: 0px;
-    top: -26px;
+    top: -30px;
     width: 22px;
     height: 32px;
     background: var(--custpin);
     background-size: 22px 32px;
     opacity: 0;
-    z-index: 5;
+    z-index: 2000;
     transition: all .6s linear, opacity .2s;
 }
 .container .pin:hover .content
