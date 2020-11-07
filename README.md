@@ -1,3 +1,3 @@
 # br-wa.github.io
 
-mostly used for testing, currently being used for learning/practicing CoffeeScript
+mostly inactive, currently being used for learning and testing coffeescript
