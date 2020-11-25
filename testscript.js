@@ -3,16 +3,16 @@
   /*
   	wheeee
   */
-  var array1, bigsum, sum;
+  var array1, bigsum, out, sum;
 
   sum = function(a, b) {
     return a + b;
   };
 
-  bigsum = function(...nums) {
+  bigsum = function(nums) {
     var result;
     result = 0;
-    nums.forEach(n)(function() {
+    nums.forEach(function(n) {
       return result += n;
     });
     return result;
@@ -20,6 +20,10 @@
 
   array1 = [3, 1, 4, 1, 5];
 
-  bigsum(array1);
+  document.write(5);
+
+  out = bigsum(array1);
+
+  document.write(out);
 
 }).call(this);
