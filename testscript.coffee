@@ -21,11 +21,10 @@ document.write out
 
 #input validator:
 
-adddiv = -> 
-	cont = document.getElementById("buttonarea") 
+adddiv = (conta) -> 
 	moo = document.createElement("input")
 	moo.type = "text"
-	cont.appendChild(moo)
+	conta.appendChild(moo)
 	1
 		
 
@@ -39,7 +38,8 @@ check = ->
 		text = "smaller input please"
 	else 
 		text = "enter lines below"
-		addiv() for x in [1..inp] 
+		conta = document.getElementById("buttonarea")
+		adddiv conta for x in [1..inp] 
 	document.getElementById("outhere").innerHTML = text
 	1
 

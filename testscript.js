@@ -26,20 +26,16 @@
   document.write(out);
 
   //input validator:
-  adddiv = function(cont) {
+  adddiv = function(conta) {
     var moo;
-    moo = document.createElement("h2");
-    moo.textContent = "hi!";
-    cont.appendChild(moo);
+    moo = document.createElement("input");
+    moo.type = "text";
+    conta.appendChild(moo);
     return 1;
   };
 
   check = function() {
-	let conta = document.createElement("div");
-	div.id = "conta";
-	div.innerHTML = "<p>moo hi</p>";
-	document.body.appendChild(conta);
-    /*var i, inp, ref, text, x;
+    var conta, i, inp, ref, text, x;
     inp = document.getElementById("sz").value;
     if (isNaN(inp)) {
       text = "enter an actual number";
@@ -49,13 +45,11 @@
       text = "smaller input please";
     } else {
       text = "enter lines below";
-	  let cont = document.createElement("div");
-	  cont.id = "buttonarea";
+      conta = document.getElementById("buttonarea");
       for (x = i = 1, ref = inp; (1 <= ref ? i <= ref : i >= ref); x = 1 <= ref ? ++i : --i) {
-        addiv(cont);
+        adddiv(conta);
       }
     }
     document.getElementById("outhere").innerHTML = text;
-    return 1;*/
-  };
-
+    return 1;
+};
