@@ -1,30 +1,14 @@
-###
-	wheeee
-###
-
-
-
-sum = (a,b) -> a + b
-
-bigsum = (nums) ->
-	result = 0
-	nums.forEach (n) -> result += n 
-	result 
-
-array1 = [3,1,4,1,5]
-
-document.write 5
-
-out = bigsum array1
-
-document.write out
-
-#input validator:
-
-adddiv = (conta) -> 
+adddiv = (n) -> 
+	conta = document.getElementById("buttonarea")
+	contanew = document.createElement("div")
+	contanew.id = "line" + n
+	conta.appendChild(contanew)
+	ltype = document.createElement("select")
+	ltype.innerHTML = "<option>ray</option><option>segment</option>"
+	contanew.appendChild(ltype)
 	moo = document.createElement("input")
 	moo.type = "text"
-	conta.appendChild(moo)
+	contanew.appendChild(moo)
 	1
 		
 
@@ -38,8 +22,7 @@ check = ->
 		text = "smaller input please"
 	else 
 		text = "enter lines below"
-		conta = document.getElementById("buttonarea")
-		adddiv conta for x in [1..inp] 
+		adddiv() for x in [1..inp] 
 	document.getElementById("outhere").innerHTML = text
 	1
 
