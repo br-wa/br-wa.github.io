@@ -38,7 +38,7 @@ addsubbox = ->
 	subbutton = document.createElement("button")
 	subbutton.innerHTML = "do things with the lines!"
 	subbutton.id = "subl"
-	subbutton.onclick = draw()
+	subbutton.onclick = draw
 	loc.appendChild(subbutton)
 	1
 
