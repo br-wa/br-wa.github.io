@@ -4,8 +4,26 @@
 
 class Point
 	constructor: (@x,@y) ->
-	
 
+class Line
+	constructor: (@isRay, @startPt, @endPt) -> 
+	prline: ->
+		ctx = document.getElementById("canv").getContext("2d")
+		ctx.strokeStyle = "#E61973"
+		ctx.lineWidth = 5
+		ctx.beginPath()
+		###ctx.moveTo(@startPt.x,@startPt.y)
+		if @isRay
+			ctx.lineTo(1000*@endPt.x - 999*@startPt.x, 1000*@endPt.y-999*@startPt.y)
+		else 
+			ctx.lineTo(@endPt.x, @endPt.y)
+		###
+		ctx.moveTo(0,0)
+		ctx.lineTo(50,50)
+		ctx.stroke()
+		1
+		
+	
 ###
 	basic stuff:
 ###
@@ -17,6 +35,7 @@ getlines = (n) ->
 	conta.appendChild(contanew)
 	
 	ltype = document.createElement("select")
+	ltype.id = "ltype" + n
 	ltype.innerHTML = "<option>ray</option><option>segment</option>"
 	contanew.appendChild(ltype)
 	
@@ -80,19 +99,21 @@ initcanv = ->
 	ctx.lineWidth = 5
 	ctx.strokeRect(0,0,canv.width,canv.height)
 
+	ctx.translate(500,500)
+
 	1
 	
 
 check = -> 
 	inp = document.getElementById("sz").value
-	if isNaN(inp) 
+	if isNaN inp 
 		text = "enter an actual number"
-	else if (inp < 1) #should probably test for isInteger here but it's not working (?)
+	else if inp < 1 #should probably test for isInteger here but it's not working (?)
 		text = "enter a positive integer"
 	else if inp > 20
 		text = "smaller input please"
 	else 
-		text = 'enter lines below (enter points as "x y" for x,y integer coords; make them in [0,500] for ideal performance)'
+		text = 'enter lines below (enter points as "x y" for x,y integer coords; make them in [-500,500] for ideal performance)'
 		getlines x for x in [1..inp] 
 		addsubbox()
 		initcanv()
@@ -137,11 +158,20 @@ checkval = (n) ->
 	true
 ###
 
+conv = (n) ->
+	start = document.getElementById("start" + n).value
+	stfl = start.split " "
+	end = document.getElementById("end" + n).value
+	fnfl = end.split " "
+	rayStr = document.getElementById("ltype" + n).value
+	new Line(rayStr == "ray", new Point(stfl[0],stfl[1]), new Point(fnfl[0], fnfl[1]))
+
 draw = ->
-	alert("you clicked a button! good for you!!")
 	inp = document.getElementById("sz").value #might be vulnerable to ppl changing inp :/
 	#unerr n for n in [1..inp]	
 	#checkval n for n in [1..inp]	
-	
+	allLines = (conv n for n in [1..inp])
+	for ell in allLines
+		ell.prline()
 
 	1
