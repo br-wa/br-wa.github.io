@@ -8,18 +8,20 @@ class Point
 class Line
 	constructor: (@isRay, @startPt, @endPt) -> 
 	prline: ->
-		ctx = document.getElementById("canv").getContext("2d")
+		canv = document.getElementById("canv")
+		ctx = canv.getContext("2d")
 		ctx.strokeStyle = "#E61973"
-		ctx.lineWidth = 5
+		ctx.lineWidth = "5"
 		ctx.beginPath()
-		###ctx.moveTo(@startPt.x,@startPt.y)
+		ctx.moveTo(@startPt.x,@startPt.y)
 		if @isRay
 			ctx.lineTo(1000*@endPt.x - 999*@startPt.x, 1000*@endPt.y-999*@startPt.y)
 		else 
+			alert @startPt.x
+			alert @endPt.x
+			alert @startPt.y
+			alert @endPt.y
 			ctx.lineTo(@endPt.x, @endPt.y)
-		###
-		ctx.moveTo(0,0)
-		ctx.lineTo(50,50)
 		ctx.stroke()
 		1
 		
@@ -87,8 +89,8 @@ initcanv = ->
 
 	canv = document.createElement("canvas")
 	canv.id = "canv"
-	canv.width = "500"
-	canv.height = "500"
+	canv.width = "600"
+	canv.height = "600"
 	loc.appendChild(canv)
 
 	ctx = canv.getContext("2d")
@@ -96,10 +98,10 @@ initcanv = ->
 	ctx.fillRect(0,0,canv.width,canv.height)
 
 	ctx.strokeStyle = "#E61973" #great color
-	ctx.lineWidth = 5
+	ctx.lineWidth = "5"
 	ctx.strokeRect(0,0,canv.width,canv.height)
 
-	ctx.translate(500,500)
+	ctx.translate(300,300)
 
 	1
 	
@@ -113,7 +115,7 @@ check = ->
 	else if inp > 20
 		text = "smaller input please"
 	else 
-		text = 'enter lines below (enter points as "x y" for x,y integer coords; make them in [-500,500] for ideal performance)'
+		text = 'enter lines below (enter points as "x y" for x,y integer coords; make them in [-300,300] for ideal performance) -- also note that html uses increasing x from left to right and increasing y from top to bottom'
 		getlines x for x in [1..inp] 
 		addsubbox()
 		initcanv()

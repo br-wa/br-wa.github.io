@@ -50,19 +50,22 @@
     }
 
     prline() {
-      var ctx;
-      ctx = document.getElementById("canv").getContext("2d");
+      var canv, ctx;
+      canv = document.getElementById("canv");
+      ctx = canv.getContext("2d");
       ctx.strokeStyle = "#E61973";
-      ctx.lineWidth = 5;
+      ctx.lineWidth = "5";
       ctx.beginPath();
-      /*ctx.moveTo(@startPt.x,@startPt.y)
-      if @isRay
-      	ctx.lineTo(1000*@endPt.x - 999*@startPt.x, 1000*@endPt.y-999*@startPt.y)
-      else 
-      	ctx.lineTo(@endPt.x, @endPt.y)
-      */
-      ctx.moveTo(0, 0);
-      ctx.lineTo(50, 50);
+      ctx.moveTo(this.startPt.x, this.startPt.y);
+      if (this.isRay) {
+        ctx.lineTo(1000 * this.endPt.x - 999 * this.startPt.x, 1000 * this.endPt.y - 999 * this.startPt.y);
+      } else {
+        alert(this.startPt.x);
+        alert(this.endPt.x);
+        alert(this.startPt.y);
+        alert(this.endPt.y);
+        ctx.lineTo(this.endPt.x, this.endPt.y);
+      }
       ctx.stroke();
       return 1;
     }
@@ -121,16 +124,16 @@
     loc.appendChild(document.createElement("p"));
     canv = document.createElement("canvas");
     canv.id = "canv";
-    canv.width = "500";
-    canv.height = "500";
+    canv.width = "600";
+    canv.height = "600";
     loc.appendChild(canv);
     ctx = canv.getContext("2d");
     ctx.fillStyle = "#C9F3F1";
     ctx.fillRect(0, 0, canv.width, canv.height);
     ctx.strokeStyle = "#E61973"; //great color
-    ctx.lineWidth = 5;
+    ctx.lineWidth = "5";
     ctx.strokeRect(0, 0, canv.width, canv.height);
-    ctx.translate(500, 500);
+    ctx.translate(300, 300);
     return 1;
   };
 
@@ -144,7 +147,7 @@
     } else if (inp > 20) {
       text = "smaller input please";
     } else {
-      text = 'enter lines below (enter points as "x y" for x,y integer coords; make them in [-500,500] for ideal performance)';
+      text = 'enter lines below (enter points as "x y" for x,y integer coords; make them in [-300,300] for ideal performance) -- also note that html uses increasing x from left to right and increasing y from top to bottom';
       for (x = i = 1, ref = inp; (1 <= ref ? i <= ref : i >= ref); x = 1 <= ref ? ++i : --i) {
         getlines(x);
       }
