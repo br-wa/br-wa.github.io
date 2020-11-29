@@ -17,10 +17,6 @@ class Line
 		if @isRay
 			ctx.lineTo(1000*@endPt.x - 999*@startPt.x, 1000*@endPt.y-999*@startPt.y)
 		else 
-			alert @startPt.x
-			alert @endPt.x
-			alert @startPt.y
-			alert @endPt.y
 			ctx.lineTo(@endPt.x, @endPt.y)
 		ctx.stroke()
 		1

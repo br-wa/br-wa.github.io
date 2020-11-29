@@ -60,10 +60,6 @@
       if (this.isRay) {
         ctx.lineTo(1000 * this.endPt.x - 999 * this.startPt.x, 1000 * this.endPt.y - 999 * this.startPt.y);
       } else {
-        alert(this.startPt.x);
-        alert(this.endPt.x);
-        alert(this.startPt.y);
-        alert(this.endPt.y);
         ctx.lineTo(this.endPt.x, this.endPt.y);
       }
       ctx.stroke();
