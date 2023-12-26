@@ -1,3 +1,3 @@
 # br-wa.github.io
 
-See [here](www.mit.edu/~brwa)
+See [here](https://www.mit.edu/~brwa)
