@@ -1,3 +1,3 @@
 # br-wa.github.io
 
-mostly inactive, currently being used for learning and testing coffeescript
+See [here](www.mit.edu/~brwa)
