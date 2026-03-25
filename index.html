@@ -5,6 +5,15 @@
 		<meta name="google-site-verification" content="V8HrLbWbjt8cDieQAiaQ76BOBsDdpjpa3GyIiIzyO_4"/>
 		<title>Brandon Wang</title>
 		<link rel="stylesheet" href="style.css">
+		<script>
+		(function() {
+			fetch('https://v.brwng.dev/api/ping', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({})
+			}).catch(function() {});
+		})();
+		</script>
 	</head>
 	<body>
 		<div class="navbar">
