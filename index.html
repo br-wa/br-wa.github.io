@@ -6,13 +6,21 @@
 		<title>Brandon Wang</title>
 		<link rel="stylesheet" href="style.css">
 		<script>
-		(function() {
-			fetch('https://v.brwng.dev/api/ping', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ r: document.referrer })
-			}).catch(function() {});
-		})();
+			(function () {
+			  const url = 'https://v.brwng.dev/api/ping';
+			  const payload = JSON.stringify({ r: document.referrer || '' });
+
+			  if (navigator.sendBeacon) {
+			    navigator.sendBeacon(url, new Blob([payload], { type: 'application/json' }));
+			  } else {
+			    fetch(url, {
+			      method: 'POST',
+			      headers: { 'Content-Type': 'application/json' },
+			      body: payload,
+			      keepalive: true,
+			    }).catch(() => {});
+			  }
+			})();
 		</script>
 	</head>
 	<body>
