@@ -7,19 +7,13 @@
 		<link rel="stylesheet" href="style.css">
 		<script>
 			(function () {
-			  const url = 'https://v.brwng.dev/api/ping';
-			  const payload = JSON.stringify({ r: document.referrer || '' });
-
-			  if (navigator.sendBeacon) {
-			    navigator.sendBeacon(url, new Blob([payload], { type: 'application/json' }));
-			  } else {
-			    fetch(url, {
-			      method: 'POST',
-			      headers: { 'Content-Type': 'application/json' },
-			      body: payload,
-			      keepalive: true,
-			    }).catch(() => {});
-			  }
+			  fetch('https://v.brwng.dev/api/ping', {
+			    method: 'POST',
+			    headers: { 'Content-Type': 'application/json' },
+			    body: JSON.stringify({ r: document.referrer || '' }),
+			    keepalive: true,
+			    credentials: 'omit',
+			  }).catch(() => {});
 			})();
 		</script>
 	</head>
