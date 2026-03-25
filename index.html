@@ -10,7 +10,7 @@
 			fetch('https://v.brwng.dev/api/ping', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({})
+				body: JSON.stringify({ r: document.referrer })
 			}).catch(function() {});
 		})();
 		</script>
